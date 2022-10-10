@@ -70,14 +70,30 @@ def Aymax() -> float:
 
 @pytest.fixture
 def cfg_file_normal(ky, ka, kcv, kcl, Vmax, Aymax):
+    txt = (
+        f"lateral distance gain: {ky}\n"
+        f"angle gain: {ka}     \n"
+        f"lane curvature gain: {kcv}     \n"
+        f"clearance gain for stop: {kcl}    \n"
+        f"vehicle velocity max(lower than 1.5): {Vmax}\n"
+        f"velocity lateral acceleration max: {Aymax}\n"
+        "\n"
+        "\n"
+        "##########################################\n"
+        "For memo \n"
+        "##########################################\n"
+        "lateral distance gain: 0\n"
+        "angle gain: 0     \n"
+        "lane curvature gain: 0     \n"
+        "clearance gain for stop: 0    \n"
+        "vehicle velocity max(lower than 1.5): 0\n"
+        "velocity lateral acceleration max: 0\n"
+        "##########################################\n"
+        "\n"
+    )
     with tempfile.NamedTemporaryFile(mode="wt", delete=False) as f:
         name = f.name
-        f.write(f"{ky}\n")
-        f.write(f"{ka}\n")
-        f.write(f"{kcv}\n")
-        f.write(f"{kcl}\n")
-        f.write(f"{Vmax}\n")
-        f.write(f"{Aymax}\n")
+        f.write(txt)
     assert os.path.exists(name)
     yield name
     # remove config file after test
