@@ -11,6 +11,7 @@ import pytest
 
 utils_path = os.path.abspath(
     os.path.join(
+        os.path.dirname(__file__),
         os.pardir,
         "src", "New Mobility", "utils"
     )
