@@ -87,6 +87,9 @@ def cfg_file_normal(ky, ka, kcv, kcl, Vmax, Aymax):
 def test_read_gain__normal(cfg_file_normal, ky, ka, kcv, kcl, Vmax, Aymax):
     result = func.read_gain(cfg_file_normal)
 
+    for k, v in enumerate(result):
+        assert isinstance(v, float), f"result[{k}] = {result[k]}"
+
     assert math.isclose(result[0], ky)
     assert math.isclose(result[1], ka)
     assert math.isclose(result[2], kcv)
