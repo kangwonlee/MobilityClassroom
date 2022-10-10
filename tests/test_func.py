@@ -16,7 +16,10 @@ utils_path = os.path.abspath(
     )
 )
 
-assert os.path.exists(utils_path), f"unable to find {utils_path}"
+assert os.path.exists(utils_path), (
+    f"unable to find {utils_path}\n"
+    f"current folder = {os.path.abspath(os.curdir)}"
+)
 
 sys.path.insert(0, utils_path,)
 
