@@ -16,7 +16,7 @@ utils_path = os.path.abspath(
     )
 )
 
-assert os.path.exists(utils_path)
+assert os.path.exists(utils_path), f"unable to find {utils_path}"
 
 sys.path.insert(0, utils_path,)
 
