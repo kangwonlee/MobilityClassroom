@@ -70,7 +70,7 @@ def Aymax() -> float:
 
 @pytest.fixture
 def cfg_file_normal(ky, ka, kcv, kcl, Vmax, Aymax):
-    with tempfile.NamedTemporaryFile(delete=False) as f:
+    with tempfile.NamedTemporaryFile(mode="wt", delete=False) as f:
         name = f.name
         f.write(f"{ky}\n")
         f.write(f"{ka}\n")
