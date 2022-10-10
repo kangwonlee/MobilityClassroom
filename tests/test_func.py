@@ -9,11 +9,21 @@ import tempfile
 
 import pytest
 
-utils_path = os.path.abspath(
+src2_path = os.path.abspath(
     os.path.join(
         os.path.dirname(__file__),
         os.pardir,
-        "src", "New Mobility", "utils"
+        "src", "New Mobility",
+    )
+)
+
+assert os.path.exists(src2_path), (
+    f"unable to find {src2_path}\n"
+    f"current folder = {os.path.abspath(os.curdir)}"
+)
+
+utils_path = os.path.abspath(
+    os.path.join(src2_path, "utils"
     )
 )
 
@@ -22,6 +32,7 @@ assert os.path.exists(utils_path), (
     f"current folder = {os.path.abspath(os.curdir)}"
 )
 
+sys.path.insert(0, src2_path,)
 sys.path.insert(0, utils_path,)
 
 import func
