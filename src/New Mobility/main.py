@@ -8,7 +8,7 @@ from Percep.Camera import Camera
 # utils
 from utils.keyPoller import KeyPoller
 import utils.params as params
-from utils.func import init, state_print, backup, init_rgb_range, help_message, read_rgb_range
+from utils.func import init, state_print, backup, help_message, read_rgb_range
 
 # PATH
 VIDEO_PATH = "/dev/video"
