@@ -49,7 +49,7 @@ def help_message():
     print("###################################")
 
 
-def read_rgb(filepath="./resource/rgb_range_init.txt"):
+def read_rgb_range(filepath="./resource/rgb_range_init.txt"):
     config = configparser.ConfigParser()
     config.read(filepath)
     rgb_range = config["range"]
