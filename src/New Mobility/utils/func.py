@@ -49,44 +49,6 @@ def help_message():
     print("###################################")
 
 
-def read_rgb_range(filepath="./resource/rgb_range_init.txt"):
-    g1 = (0, 200, 180)
-    g2 = (100, 255, 255)
-    r1 = (235, 100, 110)
-    r2 = (255, 180, 255)
-    b1 = (0, 140, 230)
-    b2 = (100, 200, 255)
-
-    try:
-        with open(filepath, "r") as f:
-            r = f.readline()
-            g = f.readline()
-            b = f.readline()
-            r = r.split(' ')
-            g = g.split(' ')
-            b = b.split(' ')
-
-            r1 = [int(r[0]), int(r[1]), int(r[2])]
-            r2 = [int(r[3]), int(r[4]), int(r[5])]
-            g1 = [int(g[0]), int(g[1]), int(g[2])]
-            g2 = [int(g[3]), int(g[4]), int(g[5])]
-            b1 = [int(b[0]), int(b[1]), int(b[2])]
-            b2 = [int(b[3]), int(b[4]), int(b[5])]
-    except:
-        pass
-
-    print('\n\n\n')
-    print("###################################")
-    print("red_lower: ", r1, '\n')
-    print("red_upper: ", r2, '\n')
-    print("green_lower: ", g1, '\n')
-    print("green_upper: ", g2, '\n')
-    print("blue_lower: ", b1, '\n')
-    print("blue_upper: ", b2, '\n')
-    print("###################################")
-    return r1, r2, g1, g2, b1, b2
-
-
 def read_rgb(filepath="./resource/rgb_range_init.txt"):
     config = configparser.ConfigParser()
     config.read(filepath)
