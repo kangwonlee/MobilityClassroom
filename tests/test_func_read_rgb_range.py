@@ -78,7 +78,7 @@ def b2() -> List[int]:
 @pytest.fixture
 def rgb_range_file_normal(r1, r2, g1, g2, b1, b2):
     txt = (
-        "[range]"
+        "[range]\n"
         f"r1 = {' '.join(map(str, r1))}\n"
         f"r2= {' '.join(map(str, r2))}     \n"
         f"g1 = {' '.join(map(str, g1))}     \n"
