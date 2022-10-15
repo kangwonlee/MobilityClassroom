@@ -42,32 +42,32 @@ random.seed()
 
 @pytest.fixture
 def r1() -> int:
-    return random.randint(0, 255)
+    return random.randint(100, 199)
 
 
 @pytest.fixture
 def r2() -> int:
-    return random.randint(0, 255)
+    return random.randint(200, 255)
 
 
 @pytest.fixture
 def g1() -> int:
-    return random.randint(0, 255)
+    return random.randint(10, 49)
 
 
 @pytest.fixture
 def g2() -> int:
-    return random.randint(0, 255)
+    return random.randint(50, 99)
 
 
 @pytest.fixture
 def b1() -> int:
-    return random.randint(0, 255)
+    return random.randint(1, 4)
 
 
 @pytest.fixture
 def b2() -> int:
-    return random.randint(0, 255)
+    return random.randint(5, 9)
 
 
 @pytest.fixture
@@ -99,7 +99,7 @@ def test_read_rgb_range__normal(rgb_range_file_normal, r1, r2, g1, g2, b1, b2):
     result = func.read_rgb_range(rgb_range_file_normal)
 
     for k, v in enumerate(result):
-        assert isinstance(v, float), f"result[{k}] = {result[k]}"
+        assert isinstance(v, int), f"result[{k}] = {result[k]}"
 
     assert math.isclose(result[0], r1)
     assert math.isclose(result[1], r2)
