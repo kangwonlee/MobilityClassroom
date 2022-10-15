@@ -8,6 +8,10 @@ import random
 import sys
 import tempfile
 
+
+from typing import List
+
+
 import pytest
 
 src2_path = os.path.abspath(
@@ -41,33 +45,33 @@ import func
 random.seed()
 
 @pytest.fixture
-def r1() -> int:
-    return random.randint(100, 199)
+def r1() -> List[int:]
+    return [random.randint(100, 199) for k in range(3)]
 
 
 @pytest.fixture
-def r2() -> int:
-    return random.randint(200, 255)
+def r2() -> List[int:]
+    return [random.randint(200, 255) for k in range(3)]
 
 
 @pytest.fixture
-def g1() -> int:
-    return random.randint(10, 49)
+def g1() -> List[int:]
+    return [random.randint(10, 49) for k in range(3)]
 
 
 @pytest.fixture
-def g2() -> int:
-    return random.randint(50, 99)
+def g2() -> List[int:]
+    return [random.randint(50, 99) for k in range(3)]
 
 
 @pytest.fixture
-def b1() -> int:
-    return random.randint(1, 4)
+def b1() -> List[int:]
+    return [random.randint(1, 4) for k in range(3)]
 
 
 @pytest.fixture
-def b2() -> int:
-    return random.randint(5, 9)
+def b2() -> List[int:]
+    return [random.randint(5, 9) for k in range(3)]
 
 
 @pytest.fixture
