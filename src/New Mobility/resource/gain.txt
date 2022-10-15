@@ -1,18 +1,31 @@
-lateral distance gain: 2.4
-angle gain: 2.6     
-lane curvature gain: 1.3     
-clearance gain for stop: 3    
-vehicle velocity max(lower than 1.5): 0.8
-velocity lateral acceleration max: 0.3
+[parameter]
+ky = 0
+ka= 0
+kcv = 0
+kcl = 0
+Vmax = 0
+Aymax = 0
 
 
 ##########################################
-For memo 
+For explained
+##########################################
+ky: lateral distance gain
+ka: angle gain
+kcv: lane curvature gain
+kcl: clearance gain for stop
+Vmax: vehicle velocity max(lower than 1.5)
+Aymax: velocity lateral acceleration max
+##########################################
+
+
+##########################################
+For memo
 ##########################################
 lateral distance gain: 0
-angle gain: 0     
-lane curvature gain: 0     
-clearance gain for stop: 0    
+angle gain: 0
+lane curvature gain: 0
+clearance gain for stop: 0
 vehicle velocity max(lower than 1.5): 0
 velocity lateral acceleration max: 0
 ##########################################

@@ -8,7 +8,7 @@ from Percep.Camera import Camera
 # utils
 from utils.keyPoller import KeyPoller
 import utils.params as params
-from utils.func import init, state_print, backup, init_rgb_range, help_message, read_rgb_range
+from utils.func import init, state_print, backup, help_message, read_rgb_range
 
 # PATH
 VIDEO_PATH = "/dev/video"
@@ -39,21 +39,7 @@ if __name__ == "__main__":
             if char == 'w':
                 red_lower, red_upper, green_lower, green_upper, blue_lower, blue_upper = get_rgb_range()
                 help_message()
-            """
-            if char == 'i':  # set rgb range
-                webcam.release()
-
-                init_rgb_range(VIDEO_PATH, IMAGE_PATH, "/home/deepracer/Desktop")
-                red_lower, red_upper, green_lower, green_upper, blue_lower, blue_upper = read_rgb_range(
-                    "/home/deepracer/Desktop/rgb_range.txt")
-
-                webcam = Camera(H=params.H, size=(640, 480),
-                                lower_green=list(green_lower), upper_green=list(green_upper),
-                                lower_red=list(red_lower), upper_red=list(red_upper),
-                                lower_blue=list(blue_lower), upper_blue=list(blue_upper))
-                webcam.get_camera(path=VIDEO_PATH)
-                help_message()
-            """
+            
             if char == 'r':  # re-get camera
                 print("re-get camera")
                 webcam.release()
