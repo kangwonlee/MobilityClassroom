@@ -96,7 +96,7 @@ def rgb_range_file_normal(r1, r2, g1, g2, b1, b2):
 
 
 def test_read_rgb_range__normal(rgb_range_file_normal, r1, r2, g1, g2, b1, b2):
-    result = func.read_cfg(rgb_range_file_normal)
+    result = func.read_rgb_range(rgb_range_file_normal)
 
     for k, v in enumerate(result):
         assert isinstance(v, float), f"result[{k}] = {result[k]}"
