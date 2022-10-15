@@ -100,8 +100,8 @@ def cfg_file_normal(ky, ka, kcv, kcl, Vmax, Aymax):
     os.remove(name)
 
 
-def test_read_gain__normal(cfg_file_normal, ky, ka, kcv, kcl, Vmax, Aymax):
-    result = func.read_gain(cfg_file_normal)
+def test_read_cfg__normal(cfg_file_normal, ky, ka, kcv, kcl, Vmax, Aymax):
+    result = func.read_cfg(cfg_file_normal)
 
     for k, v in enumerate(result):
         assert isinstance(v, float), f"result[{k}] = {result[k]}"
