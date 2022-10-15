@@ -45,32 +45,32 @@ import func
 random.seed()
 
 @pytest.fixture
-def r1() -> List[int:]
+def r1() -> List[int]
     return [random.randint(100, 199) for k in range(3)]
 
 
 @pytest.fixture
-def r2() -> List[int:]
+def r2() -> List[int]
     return [random.randint(200, 255) for k in range(3)]
 
 
 @pytest.fixture
-def g1() -> List[int:]
+def g1() -> List[int]
     return [random.randint(10, 49) for k in range(3)]
 
 
 @pytest.fixture
-def g2() -> List[int:]
+def g2() -> List[int]
     return [random.randint(50, 99) for k in range(3)]
 
 
 @pytest.fixture
-def b1() -> List[int:]
+def b1() -> List[int]
     return [random.randint(1, 4) for k in range(3)]
 
 
 @pytest.fixture
-def b2() -> List[int:]
+def b2() -> List[int]
     return [random.randint(5, 9) for k in range(3)]
 
 
