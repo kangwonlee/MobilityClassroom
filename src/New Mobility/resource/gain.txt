@@ -8,24 +8,24 @@ Aymax = 0
 
 
 ##########################################
-For explained
+# For explained
 ##########################################
-ky: lateral distance gain
-ka: angle gain
-kcv: lane curvature gain
-kcl: clearance gain for stop
-Vmax: vehicle velocity max(lower than 1.5)
-Aymax: velocity lateral acceleration max
+# ky: lateral distance gain
+# ka: angle gain
+# kcv: lane curvature gain
+# kcl: clearance gain for stop
+# Vmax: vehicle velocity max(lower than 1.5)
+# Aymax: velocity lateral acceleration max
 ##########################################
 
 
 ##########################################
-For memo
+# For memo
 ##########################################
-lateral distance gain: 0
-angle gain: 0
-lane curvature gain: 0
-clearance gain for stop: 0
-vehicle velocity max(lower than 1.5): 0
-velocity lateral acceleration max: 0
+# lateral distance gain: 0
+# angle gain: 0
+# lane curvature gain: 0
+# clearance gain for stop: 0
+# vehicle velocity max(lower than 1.5): 0
+# velocity lateral acceleration max: 0
 ##########################################
