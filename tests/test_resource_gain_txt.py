@@ -52,6 +52,21 @@ def test_gain_txt_fname(gain_txt_fname):
     )
 
 
+@pytest.fixture
+def rgb_range_txt_fname(resource_path):
+    return os.path.abspath(
+        os.path.join(resource_path, "rgb_range.txt"
+        )
+    )
+
+
+def test_rgb_range_txt_fname(rgb_range_txt_fname):
+    assert os.path.exists(rgb_range_txt_fname), (
+        f"unable to find {rgb_range_txt_fname}\n"
+        f"current folder = {os.path.abspath(os.curdir)}"
+    )
+
+
 def test_read_gain_txt(gain_txt_fname):
     config = configparser.ConfigParser()
     config.read(gain_txt_fname)
@@ -60,6 +75,19 @@ def test_read_gain_txt(gain_txt_fname):
 
     param = config["parameter"]
     keys = ("ky","ka", "kcv","kcl","Vmax","Aymax",)
+
+    for key in keys:
+        assert key in param
+
+
+def test_read_rgb_range_txt_fname(rgb_range_txt_fname):
+    config = configparser.ConfigParser()
+    config.read(rgb_range_txt_fname)
+
+    assert "range" in config.sections()
+
+    param = config["range"]
+    keys = ("r1","r2", "g1","g2","b1","b2",)
 
     for key in keys:
         assert key in param
