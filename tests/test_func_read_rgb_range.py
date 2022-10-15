@@ -44,32 +44,32 @@ random.seed()
 
 @pytest.fixture
 def r1() -> str:
-    return ' '.join([random.randint(100, 199) for k in range(3)])
+    return ' '.join([str(random.randint(100, 199)) for k in range(3)])
 
 
 @pytest.fixture
 def r2() -> str:
-    return ' '.join([random.randint(200, 255) for k in range(3)])
+    return ' '.join([str(random.randint(200, 255)) for k in range(3)])
 
 
 @pytest.fixture
 def g1() -> str:
-    return ' '.join([random.randint(10, 49) for k in range(3)])
+    return ' '.join([str(random.randint(10, 49)) for k in range(3)])
 
 
 @pytest.fixture
 def g2() -> str:
-    return ' '.join([random.randint(50, 99) for k in range(3)])
+    return ' '.join([str(random.randint(50, 99)) for k in range(3)])
 
 
 @pytest.fixture
 def b1() -> str:
-    return ' '.join([random.randint(1, 4) for k in range(3)])
+    return ' '.join([str(random.randint(1, 4)) for k in range(3)])
 
 
 @pytest.fixture
 def b2() -> str:
-    return ' '.join([random.randint(5, 9) for k in range(3)])
+    return ' '.join([str(random.randint(5, 9)) for k in range(3)])
 
 
 @pytest.fixture
