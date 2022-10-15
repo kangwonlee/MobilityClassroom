@@ -62,4 +62,4 @@ def test_read_gain_txt(gain_txt_fname):
     keys = ("ky","ka", "kcv","kcl","Vmax","Aymax",)
 
     for key in keys:
-        assert v in param
+        assert key in param
