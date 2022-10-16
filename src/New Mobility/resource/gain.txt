@@ -1,22 +1,16 @@
 [parameter]
-ky = 0
-ka= 0
-kcv = 0
-kcl = 0
-Vmax = 0
-Aymax = 0
-
-
-##########################################
-# For explained
-##########################################
 # ky: lateral distance gain
+ky = 0
 # ka: angle gain
+ka= 0
 # kcv: lane curvature gain
+kcv = 0
 # kcl: clearance gain for stop
+kcl = 0
 # Vmax: vehicle velocity max(lower than 1.5)
+Vmax = 0
 # Aymax: velocity lateral acceleration max
-##########################################
+Aymax = 0
 
 
 ##########################################
