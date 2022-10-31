@@ -192,8 +192,6 @@ class Camera:
             print("No Image")
 
 
-
-
 if __name__ == "__main__":
     """
     pointx = [62, 124, 466, 542]

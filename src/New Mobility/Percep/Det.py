@@ -42,7 +42,6 @@ class LeftLane:
         self.left_line_pre = self.left_line
         self.left_curv_pre = self.left_curv
 
-
     def get_lane(self, frame,
                  crop_lineX_lower = 0.2, crop_lineX_upper = 0.5, crop_curvX_lower = 0.4, crop_curvX_upper = 0.7, y1 = 0.3, y2 = 0.4):
         try:
@@ -72,14 +71,11 @@ class RightLane:
         self.right_line_pre = self.right_line
         self.right_curv_pre = self.right_curv
 
-
         self.H = H
-
 
     def backup(self):
         self.right_line_pre = self.right_line
         self.right_curv_pre = self.right_curv
-
 
     def get_lane(self, frame,
                  crop_lineX_lower, crop_lineX_upper, crop_curvX_lower, crop_curvX_upper, y1 = 0.3, y2 = 0.4):
@@ -112,7 +108,6 @@ class Lane:
 
         self.detected_lane_counts = 0
 
-
     def get_lane(self, frame, alpha_curv= 0.1,
                  crop_lineX_lower=0.2, crop_lineX_upper=0.5, crop_curvX_lower=0.4, crop_curvX_upper=0.7, y1 = 0.3, y2 = 0.4):
         self.detected_lane_counts = 0
@@ -129,7 +124,6 @@ class Lane:
             self.detected_lane_counts = self.detected_lane_counts + 1
         if self.right_lane.right_line is not None:
             self.detected_lane_counts = self.detected_lane_counts + 2
-
 
     def backup(self):
         self.right_lane.backup()
@@ -150,7 +144,6 @@ class StopLine:
         self.pre_clearance = pre_clearance
         self.init_pre_clearance = pre_clearance
         self.alpha_c = alpha_c
-
 
     def StopLineDet(self, frame,
                     crop_lineX_lower=0, crop_lineX_upper=1, y1 = 0.3):
@@ -177,11 +170,9 @@ class StopLine:
             poly_coef_1st = None
             pass
 
-
     def backup(self):
         if self.clearance is not None:
             self.pre_clearance = self.clearance * (1 - self.alpha_c) + self.pre_clearance * self.alpha_c
-
 
 
 if __name__ == "__main__":

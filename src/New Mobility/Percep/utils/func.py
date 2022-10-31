@@ -1,8 +1,7 @@
+import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 import numpy.linalg as lin
-import matplotlib.pyplot as plt
-import cv2
-
 
 
 def Crop(lane_points, crop_lineX_lower, crop_lineX_upper, y):
@@ -15,7 +14,6 @@ def Crop(lane_points, crop_lineX_lower, crop_lineX_upper, y):
     real_y = lane_points[1][idx]
 
     return real_x, real_y
-
 
 
 def Homography(*args):
@@ -31,7 +29,6 @@ def Homography(*args):
     h, status = cv2.findHomography(pts_src, pts_dst)
 
     return h
-
 
 
 def RANSAC(x, y, n):
@@ -79,7 +76,6 @@ def RANSAC(x, y, n):
     return X
 
 
-
 def display_lines(frame, lines, line_color=(0, 255, 0), line_width=2):
     line_image = np.zeros_like(frame)
     if lines is not None:
@@ -88,7 +84,6 @@ def display_lines(frame, lines, line_color=(0, 255, 0), line_width=2):
                 cv2.line(line_image, (x1, y1), (x2, y2), line_color, line_width)
     line_image = cv2.addWeighted(frame, 0.8, line_image, 1, 1)
     return line_image
-
 
 
 def get_points(frame, H, lower_rgb, upper_rgb):
@@ -105,7 +100,6 @@ def get_points(frame, H, lower_rgb, upper_rgb):
     lane_points = [homo[0] / homo[2], homo[1] / homo[2]]
 
     return lane_points
-
 
 
 def LaneDet(frame, H, lower_rgb, upper_rgb,
@@ -128,4 +122,3 @@ def LaneDet(frame, H, lower_rgb, upper_rgb,
         pass
 
     return [poly_coeff_1st, poly_coeff_2nd], [real_x, real_y], [real_x_curv, real_y_curv]
-    

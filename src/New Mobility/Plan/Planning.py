@@ -1,5 +1,6 @@
 import math
 
+
 class Error:
     def __init__(self, alpha_ey = 0.9, alpha_ea = 0.9):
         self.alpha_ea = alpha_ea
@@ -10,7 +11,6 @@ class Error:
 
         self.e_a_pre = 0
         self.e_y_pre = 0
-
 
     def err_cal(self, left_line, right_line, w):
         if right_line is None and left_line is None:
@@ -44,7 +44,6 @@ class Error:
         self.e_a = min(50 * math.pi / 180, max(-50 * math.pi / 180, self.e_a))
 
         return self.e_y, self.e_a
-
 
     def backup(self):
         self.e_a_pre = self.e_a

@@ -1,7 +1,6 @@
 import math
 
 
-
 class Controller:
     def __init__(self, steer_angle_max = 30, Vx_max = 0.4, c_min = 0.1, tau = 1.4, Ay_max = 0.7,
                  k_y = 4, k_a = 2.5, k_cv = 3, k_cl = 0.3):
@@ -23,7 +22,6 @@ class Controller:
         self.ee_y = 0
         self.ee_a = 0
 
-
     def Lateral_control(self, e_y, e_a, dt):
         #self.ee_y += e_y * dt
         #self.ee_a += e_a * dt
@@ -32,11 +30,7 @@ class Controller:
         #I_delta = max(-4, min(4,  -0.1 * (self.ee_y + self.ee_a)))#radian
         delta = (-self.k_y * e_y - self.k_a * e_a)# + I_delta #radian
         
-
         return max(-u_lim, min(u_lim, delta))
-
-
-
 
     def Longitudinal_Control(self, Ax_pre, Vx, dt, curv_road, isTarget, clearance, BSC_pre, ax_nom_pre):
         # Vx: 현재 속도
@@ -64,7 +58,6 @@ class Controller:
         else:
             BSC = 0
 
-
         # normalize x acc
         if Init == 1:
             ax_nom = -Vx ** 2 / 2 / (clearance - self.c_min)
@@ -82,7 +75,6 @@ class Controller:
         else:
             d_des = None
             Ax = a1
-
 
         # s_max = 2 * dt;
         # Ax = Ax_pre + max(-s_max, min(s_max, Ax - Ax_pre));

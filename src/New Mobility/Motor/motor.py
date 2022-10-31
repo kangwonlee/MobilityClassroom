@@ -117,5 +117,3 @@ if __name__ == '__main__':
 	
 	pwm0.unexport()
 	pwm1.unexport()
-	
-	
