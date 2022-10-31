@@ -1,9 +1,9 @@
-import numpy as np
-import cv2
 import math
 
-from Percep.utils.func import Homography, LaneDet
+import numpy as np
+import cv2
 
+from Percep.utils.func import Homography, LaneDet
 
 
 def max_curv(right_curv, left_curv, max_K_pre, alpha_curv):
@@ -175,7 +175,7 @@ class StopLine:
             self.pre_clearance = self.clearance * (1 - self.alpha_c) + self.pre_clearance * self.alpha_c
 
 
-if __name__ == "__main__":
+def main():
     pointx = [62, 124, 466, 542]
     pointy = [346, 277, 272, 349]
     realx = [0.31, 0.455, 0.455, 0.30]
@@ -206,3 +206,7 @@ if __name__ == "__main__":
         print("##### STOP #####")
     else:
         print("Go")
+
+
+if __name__ == "__main__":
+    main()
