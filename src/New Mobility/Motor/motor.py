@@ -1,20 +1,20 @@
-from Motor.pwm import PWM
 import time
+
+from Motor.pwm import PWM
 
 
 class Motor:
     def __init__(self, vel_max = 2.0, dt = 0.01):
-        self.vel_max = vel_max        # 1.5 m/s
-        self.dt = dt            # 1/dt (Hz)
+        self.vel_max = vel_max          # 1.5 m/s
+        self.dt = dt                    # 1/dt (Hz)
 
         self.pwm0 = PWM(0)
         print("\n PWM0 is created \n")
         self.pwm1 = PWM(1)
         print("\n PWM1 is created \n")
-    	
-        # self.pwm0.period = 20000000  # fixed?
-        # self.pwm1.period = 20000000
 
+        # self.pwm0.period = 20000000   # fixed?
+        # self.pwm1.period = 20000000
 
     def stop(self):
         self.pwm0.export()
@@ -34,7 +34,6 @@ class Motor:
 
         print('\n\nStopped by Keyboard Interrupt\n')
 
-
     def kill(self):
         self.stop()
         self.pwm0.enable = False
@@ -42,15 +41,14 @@ class Motor:
         self.pwm0.unexport()
         self.pwm1.unexport()
 
-
     def pwm_ctrl(self, a_x, Vx, delta):
         self.pwm0.export()
         self.pwm1.export()
 
-        self.pwm0.period = 20000000  # fixed?
+        self.pwm0.period = 20000000     # fixed?
         self.pwm1.period = 20000000
 
-        self.pwm0.duty_cycle = 1450000       # default value
+        self.pwm0.duty_cycle = 1450000  # default value
         # pwm1.duty_cycle = 1450000
         self.pwm0.enable = True
         self.pwm1.enable = True
@@ -65,7 +63,6 @@ class Motor:
         time.sleep(self.dt)
 
         # print("A_x = %.2f " %a_x, "Vel = %.2f " %vel, "Delta = %.2f " %delta)
-
 
     def pwm(self, Vx, delta, dt):
         self.pwm0.export()
@@ -90,9 +87,9 @@ class Motor:
 
     #     print("a_x = %.2f " %a_x, "v_x = %.2f " %Vx, "Delta = %.2f " %delta)
         time.sleep(dt)
-        
-        
-if __name__ == '__main__':
+
+
+def main():
 	Vx = 5
 	pwm0 = PWM(0)
 	pwm1 = PWM(1)
@@ -117,3 +114,7 @@ if __name__ == '__main__':
 	
 	pwm0.unexport()
 	pwm1.unexport()
+
+
+if __name__ == '__main__':
+    main()
